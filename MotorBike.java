@@ -1,27 +1,37 @@
 class MotorBike {
     private String mColor;
-    private String mSize;
+    private String mClass;
     private Frame mFrame;
     private Wheel mWheels;
-    public MotorBike(String color, String size, Material frameMaterial, double wheelSize) {
+    private Brakes mBrakes;
+    private Electronics mElectronics;
+    private Engine mEngine;
+    private Exhaust mExhaust;
+    private FuelSystem mFuelSystem;
+    public MotorBike(String color, String classification, Material frameMaterial, double wheelSize,String brakes,String electronics,String engine,String exhaust, String fuelSystem) {
         mColor = color;
-        mSize = size;
+        mClass = classification;
         mFrame = new Frame(frameMaterial);
         mWheels = new Wheel(wheelSize);
+        mBrakes = new Brakes(brakes);
+        mElectronics = new Electronics(electronics);
+        mEngine = new Engine(engine);
+        mExhaust = new Exhaust(exhaust);
+        mFuelSystem = new FuelSystem(fuelSystem);
     }
 
     public String getColor(){
         return mColor;
     }
-    public void setEngine(String engineType) {
-        engine = engineType;
+    public void setColor(String colorType) {
+        mColor = colorType;
     }
 
-    public String getSize(){
-        return mSize;
+    public String getClassifcation(){
+        return mClass;
     }
-    public void setEngine(String engineType) {
-        engine = engineType;
+    public void setClassifcation(String classType) {
+        mClass = classType;
     }
 
     public Material getFrameMaterial(){
@@ -30,6 +40,26 @@ class MotorBike {
 
     public double getWheelSize(){
         return mWheels.getSize();
+    }
+
+    public String getBrakesType(){
+        return mBrakes.getBrakes();
+    }
+
+    public String getElectronicsType(){
+        return mElectronics.getElectronics();
+    }
+
+    public String getEngineType(){
+        return mEngine.getEngine();
+    }
+
+    public String getExhaustType(){
+        return mExhaust.getExhaust();
+    }
+
+    public String getFuelSystemType(){
+        return mFuelSystem.getFuelSystem();
     }
 
 
